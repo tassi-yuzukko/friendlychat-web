@@ -17,12 +17,15 @@
 
 // Signs-in Friendly Chat.
 function signIn() {
-  // TODO 1: Sign in Firebase with credential from the Google user.
+    // Sign into Firebase using popup auth & Google as the identity provider.
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
 }
 
 // Signs-out of Friendly Chat.
 function signOut() {
-  // TODO 2: Sign out of Firebase.
+    // Sign out of Firebase.
+    firebase.auth().signOut();
 }
 
 // Initiate firebase auth.
